@@ -1,0 +1,246 @@
+/******************
+  General setting  
+*******************/
+article {
+    display: grid !important;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+section {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+    color: white;
+    padding: .25em 1em;
+    font-size: 1.8rem;
+    text-shadow: 1px 1px 0px rgb(0, 0, 0);
+    background-color: rgb(70, 133, 210);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    border: 2px solid rgb(40, 96, 164);
+    overflow: hidden;
+}
+
+article div {
+    color: gold;
+}
+
+article section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+}
+
+article section h3 {
+    grid-column: span 2;
+    font-size: 2.5rem;
+}
+
+article section div {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+article section span {
+    justify-self: start;
+}
+
+article section span:last-of-type {
+    grid-column: span 2;
+}
+
+article section img {
+    box-shadow: 3px 3px 5px black,
+        -1px -1px 5px black;
+    margin: 1em;
+    grid-column: span 2;
+}
+
+.discount, .out, .owned{
+    position: absolute;
+    text-shadow: 1px 1px 1px black,
+    -1px -1px 1px black;
+    box-shadow: 0 1px 5px black,
+    inset 0 -5px 5px rgba(0, 0, 0, 0.3),
+    inset 0 5px 5px rgba(0, 0, 0, 0.3);
+    font-weight: 900;
+}
+
+b {
+    font-size: 1.8rem;
+    color: rgb(216, 47, 47);
+    text-decoration: line-through;
+}
+
+/******************
+*  Title setting  *
+*******************/
+h3 {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-top: .2em;
+    padding: .3em .5em;
+    text-align: center;
+    min-width: 500px;
+}
+
+/***** Button *****/
+
+section button{
+    font-size: 2rem;
+    margin: .5em;
+    box-shadow: inset 1px 1px 5px rgb(70, 133, 210);
+}
+
+section button:disabled {
+    background-color: rgb(204, 0, 0);
+    box-shadow: inset 1px 1px 5px black;
+}
+
+/******************
+  Special messages  
+*******************/
+
+.discount {
+    color: rgb(255, 238, 0);
+    background-color: rgb(204, 0, 0);
+    transform: rotate(45deg);
+    padding: 0 1em;
+    right: -25px;
+    top: 15px;
+
+}
+
+.out {
+    color: rgb(0, 185, 15);
+    background-color: rgb(0, 24, 102);
+    transform: rotate(45deg);
+    padding: .2em 1em;
+    right: -33px;
+    top: 27px;
+    filter: grayscale(0);
+    z-index: 200;
+}
+
+.owned{
+    color: rgb(255, 255, 255);
+    background-color: rgb(70, 133, 210);
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    padding: .5em;
+    margin-top: 10em;
+    z-index: 200; 
+}
+
+.cant-buy {
+    position:absolute;
+    top:-25em;
+    left:-15em;
+    height: 40em;
+    width: 30em;
+    background-color:rgba(0, 0, 0, 0.4);
+    backdrop-filter: grayscale();
+    z-index: 100;
+}
+
+/******************
+   Filter setting  
+*******************/
+
+.filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.filter form{
+    display: flex;
+    justify-content: center;
+}
+
+.filter form div {
+    display: inline-block;
+}
+
+.filter form>* {
+    font-size: 2rem;
+    align-self: center;
+}
+
+.filter form button {
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+/***** Radio input *****/
+
+.filter form > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 1em;
+    font-size: 2.5rem;
+}
+
+.filter form>div input {
+    display: none;
+}
+
+.filter form>div input:checked+label{
+    color: yellow;
+    -webkit-text-stroke: 1px red;
+}
+
+/***** Search bar *****/
+
+.search{
+    background-color: white;
+    font-size: 2rem;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.search button {
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    border-right: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0 1em;
+}
+
+/* SMALL SCREEN SETTING */
+
+@media (max-width: 1000px) {
+    article {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+}

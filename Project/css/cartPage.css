@@ -1,0 +1,49 @@
+/* General settings */
+section li form {
+    display: inline-block;
+}
+
+section ul {
+    list-style: none;
+}
+
+section li{
+    background-color: rgba(70, 133, 210, 0.5);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    align-items: center;
+    justify-items: center;
+    padding: 1em 0;
+    border-top: 2px solid rgb(34, 85, 148);
+}
+
+section li:last-of-type {
+    border-bottom: 2px solid rgb(34, 85, 148);
+}
+
+section li button {
+    margin: 2em;
+}
+
+section button i {
+    margin-right: 1em;
+}
+
+.empty{
+    display: flex;
+    flex-direction: column  ;
+    align-items: center;
+    font-weight: 600;
+}
+
+.empty p{
+    font-size: 2.5rem;
+    color: gray;
+    text-shadow: 1px 1px 1px darkgray;
+    margin: 2.5em;
+}
+
+.empty a{
+    color: rgb(70, 133, 210);
+    margin: 5em;
+}

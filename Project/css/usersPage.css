@@ -1,0 +1,242 @@
+section li form {
+    display: inline-block;
+}
+
+section ul {
+    list-style: none;
+    max-height: 20em;
+    overflow-y: scroll;
+    box-shadow: 0 2px 5px black;
+    border-bottom-left-radius: 5px;
+}
+
+section li {
+    background-color: rgba(70, 133, 210, 0.5);
+    display: grid;
+    grid-template-columns: repeat(2, 3fr) 1fr 2fr 1fr 2fr 1fr;
+    align-items: center;
+    justify-items: start;
+    border-top: 2px solid rgb(34, 85, 148);
+}
+
+section li span:nth-of-type(3),
+section li span:nth-of-type(5),
+section li span:nth-of-type(7){
+    justify-content: center;
+    overflow: hidden;
+}
+
+ul li:hover{
+    filter: brightness(1.2);
+}
+
+section>li:last-of-type {
+    background-color: rgb(70, 133, 210);
+    margin-right: .75em;
+    box-shadow: 0 2px 5px black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+section li:last-of-type {
+    border-bottom: 2px solid rgb(34, 85, 148);
+}
+
+section span{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: .5em;
+    border-right: 1px solid rgb(34, 85, 148);
+}
+
+section li button {
+    margin: 2em;
+}
+
+section button i {
+    margin-right: 1em;
+}
+
+.on{
+    color: rgb(0, 214, 0);
+    -webkit-text-stroke: 2px black;
+    text-shadow: 1px 1px 10px rgb(0, 214, 0),
+    -1px -1px 10px rgb(0, 214, 0);
+    text-align: center;
+}
+
+.off{
+    color: darkred;
+    -webkit-text-stroke: 2px black;
+    text-align: center;
+}
+
+.empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+}
+
+.empty p {
+    font-size: 2.5rem;
+    color: gray;
+    text-shadow: 1px 1px 1px darkgray;
+    margin: 2.5em;
+}
+
+.empty a {
+    color: rgb(70, 133, 210);
+    margin: 5em;
+}
+
+/******************
+   SCROLL SETTING
+*******************/
+
+section li span{
+    overflow: scroll;
+}
+
+ul::-webkit-scrollbar {
+    width: .75em;
+}
+
+ul::-webkit-scrollbar-track {
+    background-color: #fff;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+ul::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(rgb(122, 153, 217),
+            rgb(73, 125, 189),
+            rgb(28, 58, 148));
+    border-radius: 5px;
+    box-shadow: 0 2px 5px black;
+}
+
+ul::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(rgb(122, 153, 255),
+            rgb(73, 125, 255),
+            rgb(28, 58, 255));
+}
+
+span::-webkit-scrollbar {
+    height: 0px;
+}
+
+/******************
+   Filter setting  
+*******************/
+
+.filter {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.filter form {
+    display: flex;
+    justify-content: center;
+}
+
+.filter form div {
+    display: inline-block;
+}
+
+.filter form>* {
+    font-size: 2rem;
+    align-self: center;
+}
+
+.filter form button {
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    margin: 0;
+}
+
+/***** Radio input *****/
+
+.filter form>div {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-items: center;
+    margin: 0 1em;
+    font-size: 2.5rem;
+}
+
+.filter form>div input {
+    display: none;
+}
+
+.filter form>div input:checked+label {
+    color: yellow;
+    -webkit-text-stroke: 1px red;
+}
+
+/***** Search bar *****/
+
+.search {
+    background-color: white;
+    font-size: 2rem;
+    align-self: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.search button {
+    font-size: 1.5rem;
+    background-color: white;
+    color: black;
+    margin: 0;
+    border: none;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.search input {
+    border: none;
+    outline: none;
+    border-right: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0 1em;
+}
+
+/* SMALL SCREEN SETTING */
+
+@media (max-width: 1000px) {
+    li{
+        grid-template-columns: 2fr repeat(4, 1fr) !important;
+        font-size: 75%;
+    }
+
+    li span{
+        padding-right: 0;
+    }
+
+    section>li:last-of-type {
+        margin-right: 0;
+
+    }
+    
+    li span:nth-of-type(2),
+    li span:nth-of-type(4) {
+        display: none;
+    }
+
+    .filter {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-evenly;
+    }
+
+    ul::-webkit-scrollbar {
+        width: 0px;
+    }
+}

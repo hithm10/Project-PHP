@@ -1,0 +1,126 @@
+/*******************
+*Form / p setting*
+********************/
+
+form {
+    display: flex;
+    flex-direction: column;
+    min-height: 12em;
+    justify-content: space-evenly;
+    padding: 1em;
+    font-size: 1.6rem;
+    text-shadow: none;
+    font-weight: 900;
+    width: 100%;
+}
+
+section {
+    background-color: rgb(70, 133, 210);
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px black,
+        inset -2px -2px 5px black;
+    padding: 1em;
+}
+
+input,
+select {
+    padding: .2em 1em;
+    background-color: rgb(240, 240, 240);
+    font-size: 2rem;
+    margin-bottom: 1em;
+    border: solid 2px rgb(109, 103, 94);
+    border-radius: 5px;
+}
+
+button {
+    max-width: 5em;
+    padding: .3em .7em;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    background-color: rgb(243, 229, 209);
+    box-shadow: 2px 2px 5px black,
+        inset 2px 2px 5px white;
+    align-self: center;
+    color: black;
+}
+
+form button:hover,
+form button:focus {
+    transform: scale(1.05);
+    outline: none;
+}
+
+form input:hover,
+form select:hover {
+    border: solid 2px rgb(189, 178, 162);
+}
+
+form input:focus,
+form select:focus {
+    outline-color: rgb(189, 178, 162);
+}
+
+form button:active {
+    transform: scale(1);
+    box-shadow: inset 2px 2px 5px black,
+        inset -1px -1px 5px black;
+    background-color: rgb(189, 178, 162);
+    outline: none;
+}
+
+/*  Link setting  */
+
+section a {
+    color: rgb(208, 214, 226);
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px black;
+    text-align: start;
+    width: 100%;
+    margin: 1em;
+}
+
+section a:hover,
+section a:focus {
+    color: tomato;
+    outline: none;
+}
+
+section a:active {
+    color: rgb(189, 178, 162);
+    ;
+}
+
+select {
+    color: rgb(127, 127, 127);
+}
+
+select option {
+    color: black;
+}
+
+label {
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    margin-left: 1em;
+}
+
+/*  "*"   */
+label b {
+    color: rgb(255, 71, 71);
+    font-size: 2rem;
+    text-shadow: 1px 1px 1px black;
+}
+
+form div label {
+    color: black;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+form div label:first-of-type {
+    color: white;
+    font-weight: 900;
+    text-shadow: 1px 1px 1px black;
+}
